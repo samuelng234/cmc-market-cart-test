@@ -12,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(typeof(Program).Assembly);
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<IGlobalisationRepository, GlobalisationRepository>();
 
 builder.Services.AddCors(opt => opt.AddPolicy("CorsPolicy", c =>
 {
