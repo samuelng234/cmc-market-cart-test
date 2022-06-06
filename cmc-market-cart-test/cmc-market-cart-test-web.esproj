@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="src\models\" />
     <Folder Include="src\pages\" />
-    <Folder Include="src\redux\actions\" />
     <Folder Include="src\redux\sagas\" />
     <Folder Include="src\redux\reducers\" />
   </ItemGroup>

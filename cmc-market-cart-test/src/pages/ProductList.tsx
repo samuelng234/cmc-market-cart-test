@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ProductItems from "../components/ProductItems";
-import { GetProductsListRequestPayload } from "../redux/actions/actions";
+import { Link } from "react-router-dom";
+import ProductItemsList from "../components/ProductItemsList";
+import { GetProductsListRequestPayload } from "../redux/actions/productActions";
 import { GET_PRODUCTS_LIST } from "../redux/actions/actionTypes";
 import { RootState } from "../redux/rootReducer";
 
@@ -17,8 +18,9 @@ const ProductList = () => {
 
     return (
         <div>
+            <div><Link to="/checkout">Go To Checkout</Link></div>
             <h2>ProductList</h2>
-            <ProductItems items={productList} />
+            <ProductItemsList items={productList} />
         </div>
     );
 }
