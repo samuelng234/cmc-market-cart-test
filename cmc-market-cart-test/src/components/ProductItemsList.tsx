@@ -5,16 +5,16 @@ export type ProductItemProps = {
     items: Product[]
 }
 
-const ProductItems = (props: ProductItemProps) => {
+const ProductItemsList = (props: ProductItemProps) => {
     return (
         <>
             {props.items.length > 0 && (<div>
                 {props.items.map((product, index) => (
-                    <ProductItem item={product} />
+                    <ProductItem key={product.id} item={product} />
                 ))}
             </div>)}
         </>
     );
 }
 
-export default ProductItems;
+export default ProductItemsList;
