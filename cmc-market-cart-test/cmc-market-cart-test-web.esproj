@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.26-alpha">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>47da7dbc-9be8-42f2-84d1-9155e3ee6b53</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupCommand>set BROWSER=none&amp;&amp;npm start</StartupCommand>
+    <JavaScriptTestRoot>src\</JavaScriptTestRoot>
+    <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\components\" />
+    <Folder Include="src\models\" />
+    <Folder Include="src\pages\" />
+    <Folder Include="src\redux\actions\" />
+    <Folder Include="src\redux\sagas\" />
+    <Folder Include="src\redux\reducers\" />
+  </ItemGroup>
+</Project>
