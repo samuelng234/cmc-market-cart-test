@@ -5,7 +5,12 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "cmc-market-cart-test-web", "cmc-market-cart-test\cmc-market-cart-test-web.esproj", "{47DA7DBC-9BE8-42F2-84D1-9155E3EE6B53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmc-market-cart-test-service", "cmc-market-cart-test-service\cmc-market-cart-test-service.csproj", "{7563D842-82F6-4573-B036-29CCE5AD026A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cmc-market-cart-test-service", "cmc-market-cart-test-service\cmc-market-cart-test-service.csproj", "{7563D842-82F6-4573-B036-29CCE5AD026A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cmc-market-cart-test-unit-test", "cmc-market-cart-test-unit-test\cmc-market-cart-test-unit-test.csproj", "{579648D0-BEF6-4A1F-93CC-9C021F8F3AEB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7563D842-82F6-4573-B036-29CCE5AD026A} = {7563D842-82F6-4573-B036-29CCE5AD026A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +28,10 @@ Global
 		{7563D842-82F6-4573-B036-29CCE5AD026A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7563D842-82F6-4573-B036-29CCE5AD026A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7563D842-82F6-4573-B036-29CCE5AD026A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{579648D0-BEF6-4A1F-93CC-9C021F8F3AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579648D0-BEF6-4A1F-93CC-9C021F8F3AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579648D0-BEF6-4A1F-93CC-9C021F8F3AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579648D0-BEF6-4A1F-93CC-9C021F8F3AEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
