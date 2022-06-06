@@ -3,6 +3,7 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { Country } from '../../models/country';
 import { Product } from '../../models/product';
 import { GET_CURRENCY_CODE, GET_COUNTRY_LIST } from '../actions/actionTypes';
+import { GetCountryListRequestPayload, GetCurrencyCodeRequestPayload } from '../actions/globalisationActions';
 import { setDefaultCountry, setSelectedCountry, setCountryList } from '../reducers/globalisationReducer';
 
 const mainAxios = axios.create({
@@ -17,7 +18,7 @@ const getCountryListData = () => {
     return mainAxios.get("/countries");
 }
 
-function* getCurrencyCode() {
+function* getCurrencyCode(action: GetCurrencyCodeRequestPayload) {
     try {
         const { data }: { data: Country } = yield call(getCurrencyCodeData);
 
@@ -28,7 +29,7 @@ function* getCurrencyCode() {
     }
 }
 
-function* getCountryList() {
+function* getCountryList(action: GetCountryListRequestPayload) {
     try {
         const { data }: { data: Country[] } = yield call(getCountryListData);
 

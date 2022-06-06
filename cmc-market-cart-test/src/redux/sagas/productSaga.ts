@@ -2,6 +2,7 @@ import axios from 'axios';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { Product } from '../../models/product';
 import { GET_PRODUCTS_LIST } from '../actions/actionTypes';
+import { GetProductsListRequestPayload } from '../actions/productActions';
 import { setProductList } from '../reducers/productReducer';
 
 const mainAxios = axios.create({
@@ -12,7 +13,7 @@ const getProductdata = () => {
     return mainAxios.get("/Product");
 }
 
-function* getProductList() {
+function* getProductList(action: GetProductsListRequestPayload) {
     try {
         const { data }: { data: Product[] } = yield call(getProductdata);
 

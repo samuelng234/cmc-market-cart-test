@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(typeof(Program).Assembly);
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IGlobalisationRepository, GlobalisationRepository>();
+builder.Services.AddTransient<ICartRepository, CartRepository>();
 
 builder.Services.AddCors(opt => opt.AddPolicy("CorsPolicy", c =>
 {

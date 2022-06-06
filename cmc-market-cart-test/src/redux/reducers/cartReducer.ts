@@ -3,11 +3,13 @@ import { CartItem } from "../../models/cartItem";
 import { Product } from "../../models/product";
 
 export type CartState = {
-    cartItems: CartItem[]
+    cartItems: CartItem[],
+    totalShippingCost: number
 }
 
 export const initialState: CartState = {
-    cartItems: []
+    cartItems: [],
+    totalShippingCost: 0
 }
 
 const cartSlice = createSlice({
@@ -25,8 +27,7 @@ const cartSlice = createSlice({
                 const newCartItem: CartItem = {
                     product: action.payload,
                     quantity: 1,
-                    price: action.payload.price,
-                    total: action.payload.price
+                    price: action.payload.price
                 }
                 state.cartItems.push(newCartItem);
             }
@@ -35,14 +36,18 @@ const cartSlice = createSlice({
         },
         removeItemFromCart(state, action: PayloadAction<number>) {
             state.cartItems = state.cartItems.filter(item => item.product.id !== action.payload);
-        }
+        },
+        setTotalShippingCost(state, action: PayloadAction<number>) {
+            state.totalShippingCost = action.payload;
+        },
     }
 });
 
 export const {
     setCartItems,
     addItemToCart,
-    removeItemFromCart
+    removeItemFromCart,
+    setTotalShippingCost
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
