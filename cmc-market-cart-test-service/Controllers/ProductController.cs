@@ -9,9 +9,9 @@ namespace cmc_market_cart_test_service.Controllers
     public class ProductController : ControllerBase
     {
         private readonly ISender _mediator;
-        private readonly ILogger<CartController> _logger;
+        private readonly ILogger<ProductController> _logger;
 
-        public ProductController(ISender mediator, ILogger<CartController> logger)
+        public ProductController(ISender mediator, ILogger<ProductController> logger)
         {
             _mediator = mediator;
             _logger = logger;

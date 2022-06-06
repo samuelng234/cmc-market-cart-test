@@ -9,6 +9,7 @@ import { RootState } from "../redux/rootReducer";
 const ProductList = () => {
     const dispatch = useDispatch();
     const { productList } = useSelector((state: RootState) => state.products)
+    const { selectedCountry } = useSelector((state: RootState) => state.globalisation)
 
     useEffect(() => {
         dispatch<GetProductsListRequestPayload>({
@@ -20,7 +21,8 @@ const ProductList = () => {
         <div>
             <div><Link to="/checkout">Go To Checkout</Link></div>
             <h2>ProductList</h2>
-            <ProductItemsList items={productList} />
+            {(selectedCountry &&
+                <ProductItemsList items={productList} />)}
         </div>
     );
 }

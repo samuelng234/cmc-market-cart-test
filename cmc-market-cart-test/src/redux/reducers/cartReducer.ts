@@ -34,8 +34,7 @@ const cartSlice = createSlice({
             
         },
         removeItemFromCart(state, action: PayloadAction<number>) {
-            const itemIndex = state.cartItems.findIndex(item => item.product.id === action.payload);
-            state.cartItems.slice(itemIndex, 1);
+            state.cartItems = state.cartItems.filter(item => item.product.id !== action.payload);
         }
     }
 });

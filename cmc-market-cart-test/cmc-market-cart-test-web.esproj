@@ -8,9 +8,7 @@
     <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="src\models\" />
     <Folder Include="src\pages\" />
-    <Folder Include="src\redux\sagas\" />
     <Folder Include="src\redux\reducers\" />
   </ItemGroup>
 </Project>
