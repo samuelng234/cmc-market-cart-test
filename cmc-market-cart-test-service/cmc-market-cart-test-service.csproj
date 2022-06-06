@@ -5,19 +5,18 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>cmc_market_cart_test_service</RootNamespace>
+    <UserSecretsId>a91ee8c3-1216-4630-a396-33c8a32810b9</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Commands\" />
     <Folder Include="CommandHandlers\" />
-    <Folder Include="QueryHandlers\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Queries\" />
   </ItemGroup>
 
 </Project>
