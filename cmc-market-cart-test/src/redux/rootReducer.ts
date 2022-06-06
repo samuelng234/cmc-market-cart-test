@@ -1,11 +1,16 @@
+import { Reducer } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-import { routerReducer, RouterState } from 'react-router-redux'
+import productReducer from "./reducers/productReducer";
 
-export interface RootState {
-	routerReducer: RouterState
+export const createReducer = (reducers?: Reducer) => {
+	return combineReducers({
+		products: productReducer,
+		...reducers
+	});
 }
 
-export default () =>
-	combineReducers({
-		routerReducer
-	});
+const rootReducer = createReducer();
+
+export type RootState = ReturnType<typeof rootReducer>;
+
+export default rootReducer;

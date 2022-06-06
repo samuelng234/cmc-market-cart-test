@@ -13,6 +13,13 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(typeof(Program).Assembly);
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
+builder.Services.AddCors(opt => opt.AddPolicy("CorsPolicy", c =>
+{
+    c.AllowAnyOrigin()
+       .AllowAnyHeader()
+       .AllowAnyMethod();
+}));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,6 +28,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 
